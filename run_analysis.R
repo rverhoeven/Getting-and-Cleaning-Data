@@ -60,7 +60,6 @@ colnames(complete)              <- gsub("-|\\()","",colnames(complete),)
 
 ############ Finally take mean value of all columns and write to txt file
 
-library(dplyr)
 Final           <- aggregate(complete,by=list(complete$activity,complete$subject),FUN=mean)
 Final           <- Final[,c(-2,-3)]
 names(Final)[1]   <- "activity" 
